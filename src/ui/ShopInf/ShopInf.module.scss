@@ -1,0 +1,14 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.shop-inf {
+  display: flex;
+  align-items: center;
+  column-gap: functions.rem(20);
+
+  .shopping-cart {
+    display: flex;
+    column-gap: functions.rem(11);
+  }
+}
