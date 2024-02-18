@@ -1,0 +1,38 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../../assets/preview.png);
+  height: functions.rem(800);
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: functions.rem(48);
+    h1 {
+      max-width: functions.rem(504);
+      @include mixin.font($size: 86, $height: 100%, $weight: 600);
+      color: constants.$blackColor;
+      font-family: Oswald;
+      letter-spacing: 0;
+    }
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    img {
+      position: relative;
+      z-index: 2;
+      @include mixin.first() {
+        position: relative;
+        left: functions.rem(100);
+        z-index: 1;
+      }
+    }
+  }
+}

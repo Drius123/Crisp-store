@@ -1,0 +1,19 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.btn {
+  width: functions.rem(175);
+  height: functions.rem(56);
+  border: functions.rem(2) solid constants.$blackColor;
+  color: constants.$blackColor;
+  text-align: center;
+  @include mixin.font($size: 16, $height: 150%, $weight: 500);
+  font-family: Oswald;
+  @include mixin.anyHover() {
+    color: constants.$whiteColor;
+    background-color: constants.$blackColor;
+  }
+}
+.active {
+}
