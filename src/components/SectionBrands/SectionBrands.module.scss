@@ -1,0 +1,36 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.brands {
+  position: relative;
+  padding-top: functions.rem(40);
+  margin-top: functions.rem(40);
+  border: functions.rem(2) solid constants.$borderColor;
+
+  @include mixin.pseudocell(before) {
+    content: "CHOSE YOUR BRAND";
+    padding: 0 functions.rem(100);
+    top: functions.rem(-35);
+    left: 40%;
+    color: rgb(0, 0, 0);
+    font-family: Oswald;
+    @include mixin.font($size: 24, $height: functions.rem(68), $weight: 400);
+    letter-spacing: 0%;
+    background-color: constants.$whiteColor;
+    text-align: center;
+  }
+
+  .brand {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    cursor: pointer;
+    svg {
+      transition: constants.$standartTrans;
+      @include mixin.anyHover() {
+        fill: constants.$lightBlue;
+      }
+    }
+  }
+}
